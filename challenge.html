@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="rock">Rock</button>
+    <button type="button" id="paper">Paper</button>
+    <button type="button" id="scissors">Scissors</button>
+
+    <script>
+        let buttons = document.querySelectorAll('button')
+
+        buttons.forEach(button => button.addEventListener('click', (event) => play(event.currentTarget)))
+
+        let table = {
+            rock: 0,
+            paper: 1,
+            scissors: 2
+        }
+
+        function play(target) {
+            let computerPlay = Math.floor(Math.random() * 3)
+            let playerPlay = table[target.getAttribute('id')]
+
+            console.log(`You played ${Object.keys(table).filter(key => table[key] == playerPlay)}`)
+            console.log(`Computer played ${Object.keys(table).filter(key => table[key] == computerPlay)}`)
+
+            if (Math.abs(playerPlay - computerPlay) === 0) {
+                console.log('Nobody won')
+                return
+            }
+
+            if (Math.abs(playerPlay - computerPlay) === 1) {
+                if (playerPlay > computerPlay) {
+                    console.log('You won')
+                    return
+                }
+                console.log('The computer won')
+                return
+            }
+
+            if (Math.abs(playerPlay - computerPlay) === 2) {
+                if (playerPlay > computerPlay) {
+                    console.log('Computer won')
+                    return
+                }
+                console.log('You won')
+                return
+            }
+        }
+    </script>
+</body>
+
+</html>

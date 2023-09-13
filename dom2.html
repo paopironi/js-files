@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSphere</title>
+</head>
+
+<body>
+    <p>Input the radius of the sphere and get its volume</p>
+    <br>
+    <p>Radius</p>
+    <input type="text" name="radius" id="radius" placeholder="Radius of the sphere">
+    <p>Volume</p>
+    <p id="volume">0</p>
+    <button type="button" id="calculate">Calculate</button>
+
+    <script>
+        document.querySelector('#calculate').addEventListener('click', () => calculate())
+
+        function calculate() {
+            const radius = Number(document.querySelector('#radius').value)
+            const volume = 4 / 3 * Math.PI * Math.pow(radius, 3)
+            document.querySelector('#volume').innerHTML = volume.toFixed(2)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = Number(prompt('Input the first number'))
+        const b = Number(prompt('Input the second number'))
+        const c = Number(prompt('Input the third number'))
+        if (a == b) {
+            if (b == c) {
+                window.alert('All numbers are equal')
+            } else {
+                window.alert('Neither all are equal or different')
+            }
+        } else {
+            if (a == c) {
+                window.alert('Neither all are equal or different')
+            } else if (b == c) {
+                window.alert('Neither all are equal or different')
+            } else {
+                window.alert('All numbers are different')
+            }
+        }
+    </script>
+</body>
+
+</html>

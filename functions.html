@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /** 
+         * @param {number[]} arr
+         */
+        function showArrayContent(arr) {
+            console.log(`The content of the array is: [${arr.join(', ')}]`)
+            console.log(`The maximum value in the array is ${Math.max(...arr)}`)
+        }
+
+        // showArrayContent([10, 2, 3, 4, 7])
+
+        function factorial(n) {
+            let fact = 1
+            if (n === 0) {
+                fact = 1
+            }
+            if (n < 0) {
+                console.log('Cannot compute the factorial of a negative number')
+                return
+            }
+            for (let i = n; i > 0; i--) {
+                fact = fact * i
+            }
+            console.log(`The factorial of ${n} is ${fact}`)
+        }
+
+        // const n = Number(window.prompt('Enter an integer number'))
+        // factorial(n)
+
+        function isPrime(n) {
+            if (n < 0) {
+                console.log('Negative numbers cannot be prime')
+                return
+            }
+            if (n == 2 || n == 1) {
+                console.log(`${n} is a prime number`)
+                return
+            }
+            if (n % 2 == 0 && n > 2) {
+                console.log(`${n} is not a prime number`)
+                return
+            }
+            for (let i = 3; i < n / 2; i = i + 2) {
+                if (n % i == 0) {
+                    console.log(`${n} is not a prime number`)
+                    return
+                }
+            }
+            console.log(`${n} is a prime number`)
+        }
+        const n = Number(window.prompt('Enter a positive integer number'))
+        isPrime(n)
+
+    </script>
+</body>
+
+</html>
